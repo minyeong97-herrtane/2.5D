@@ -11,6 +11,7 @@ We tested the result with Unity Engine combined with Valve Index VR to track the
 The idea works, but due to glichy input of the eye and incorrect position input of the display makes it hard to enjoy the changing perspective.
 
 ## Theoretical Backgrounds
+![alt text](./projection_matrix.png)
 Rendering 3D scene to a 2D display needs 3 matrix multiplications. 
 The first matrix is the translation matrix, which translates and rotates the local position of the object to an absolute axis.
 The second matrix is lookAt matrix, which rotates and translates the whole axis to make camera the center.
