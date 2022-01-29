@@ -25,7 +25,8 @@ The cone consists with 4 edge lines that meets in one spot, and a bottom plane.
 In this particular frusturm, the lines are lines crossing (left, bottom, near) & (0, 0), (left, top, near) & (0, 0), (right, bottom, near) & (0, 0), (right, top, near) & (0, 0).
 And the bottom plane is decided by the far variable, z = far.
 Now eventually, this cone is cut by a plane to make a frustrum, which is z = near.
-![alt text](./expression.png)
+
+![projection matrix](./equation.png)
 
 If the angle of top of the cone is bigger and bigger, the angle of view becomes bigger.
 This allows you to see more stuff. This make you look at the world with an wide angle lens, which is apparent from the name.
