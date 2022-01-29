@@ -41,7 +41,7 @@ This way, movomg your eyes will change the values of left, right, bottom, top.
 
 ## Project Setup
 The project is set with Unity game engine, tracking eye movement using Valve Index VR.
-Any 3D environment is good to test this project. We used //todo.
+Any 3D environment is good to test this project. We used a simple project presented here[https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-for-unity-2018-4-32351]. 
 
 ## The Result
 It is difficult for the player to experience 3 dimentional depth due to 1) lack of precise location tracking of the display & eye 2) same image input to both of your eyes. But because we could not solve the first problem, it is hard to measure the effect.
