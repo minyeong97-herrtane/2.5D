@@ -85,7 +85,33 @@ The purpose of using the valve index plugin is to get the position of the contro
         
 from this example, we only need the position of the controller. Now, we update the `left`, `right`, ... variables according to this position. This is done by following.
 
+       private void LateUpdate()
+        {
+            
+            Vector3 vPosition = poseActionR[SteamVR_Input_Sources.LeftHand].localPosition;
+            Quaternion qRotation = poseActionR[SteamVR_Input_Sources.LeftHand].localRotation;
+            //Camera.transform.localPosition = vPosition;
+            // print("Position : " + vPosition.x + "," + vPosition.y + "," + vPosition.z);
 
+            // update left, right, top, bottom
+            Vector3 transposedMonitorLeftupperPos = monitorLeftupperPosition - vPosition;
+            Vector3 transposedMonitorRightbottomPos = monitorRightbottomPosition - vPosition;
+
+            // 베이스 스테이션 위치에 따라서 x랑 z축 방향이 반전될 수 있음
+            // 그러면 코드를 바꿔주어야 함. 아래는 해당 사항에 대한 코드임
+            // x는 왼쪽이 -, Z는 다가오는 쪽이 -, y는 위쪽이 플러스이므로, x랑 z축은 -를 붙여야 한다.
+            left = transposedMonitorLeftupperPos.x * scale;
+            right = transposedMonitorRightbottomPos.x * scale;
+            top = transposedMonitorLeftupperPos.y * scale;
+            bottom = transposedMonitorRightbottomPos.y * scale;
+            near = transposedMonitorLeftupperPos.z * scale;
+            far = 1000f;
+            
+            Matrix4x4 m = PerspectiveOffCenter(left, right, bottom, top, near, far);
+            OurCamera.projectionMatrix = m;
+        }
+
+By doing this, we can update the perspective matrix according to the position of the controller.
 
 ## The Result
 It is difficult for the player to experience 3 dimentional depth due to 1) lack of precise location tracking of the display & eye 2) same image input to both of your eyes. But because we could not solve the first problem, it is hard to measure the effect.
