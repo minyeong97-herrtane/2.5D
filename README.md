@@ -42,7 +42,7 @@ This way, movomg your eyes will change the values of left, right, bottom, top.
 ## Project Setup
 ### Unity Porject Setup
 The project is set with Unity game engine, tracking eye movement using Valve Index VR.
-Any 3D environment is good to test this project. We used a simple project presented [here](https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-for-unity-2018-4-32351). The key to changing the project fit with our project is to change the matrix related with the the camera. The original project
+Any 3D environment is good to test this project. We used a simple project presented [here](https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-for-unity-2018-4-32351). The key to changing the project fit with our project is to change the matrix related with the the camera. The original project has a function called `PerspectiveOffCenter()`. This function takes parameters like left, right, bottom, top, near, far and calculates the projection matrix explained above.
 
         static Matrix4x4 PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far)
         {
@@ -72,6 +72,20 @@ Any 3D environment is good to test this project. We used a simple project presen
             m[3, 3] = 0;
             return m;
         }
+
+### Valve Index Setup
+The valve Index is connected with the project with a [plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647). Now we can drag assets from the plugin and use them. There are lots of them, but we only need the asset called `CameraRig`. The `CameraRig` has two sub-assets, called `Controller (left)` and `Controller (right)`. In our project, we only use `Controller (left)`. If we use the `CameraRig`, the camera is automatically set to VR camera. But in this case, we will use our modified version. So we disable `camera` sub asset of `CameraRig`.
+
+The purpose of using the valve index plugin is to get the position of the controller(which is the representation of the eye position). To do this, we need to define a variable called `poseActionR`, which is `SteamVR_Action_Pose` type. By defining this variable, we can get the position of the controller by doing the following.
+
+        // get the position
+        Vector3 vPosition = poseActionR[SteamVR_Input_Sources.LeftHand].localPosition;
+        // get the rotation
+        Quaternion qRotation = poseActionR[SteamVR_Input_Sources.LeftHand].localRotation;
+        
+from this example, we only need the position of the controller. Now, we update the `left`, `right`, ... variables according to this position. This is done by following.
+
+
 
 ## The Result
 It is difficult for the player to experience 3 dimentional depth due to 1) lack of precise location tracking of the display & eye 2) same image input to both of your eyes. But because we could not solve the first problem, it is hard to measure the effect.
