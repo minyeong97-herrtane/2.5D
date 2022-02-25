@@ -96,10 +96,7 @@ from this example, we only need the position of the controller. Now, we update t
             // update left, right, top, bottom
             Vector3 transposedMonitorLeftupperPos = monitorLeftupperPosition - vPosition;
             Vector3 transposedMonitorRightbottomPos = monitorRightbottomPosition - vPosition;
-
-            // 베이스 스테이션 위치에 따라서 x랑 z축 방향이 반전될 수 있음
-            // 그러면 코드를 바꿔주어야 함. 아래는 해당 사항에 대한 코드임
-            // x는 왼쪽이 -, Z는 다가오는 쪽이 -, y는 위쪽이 플러스이므로, x랑 z축은 -를 붙여야 한다.
+            
             left = transposedMonitorLeftupperPos.x * scale;
             right = transposedMonitorRightbottomPos.x * scale;
             top = transposedMonitorLeftupperPos.y * scale;
