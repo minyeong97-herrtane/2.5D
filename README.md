@@ -10,6 +10,10 @@ This is done by calculating the frustum the display and the eyes make.
 We tested the result with Unity Engine combined with Valve Index VR to track the position of the eye. 
 The idea works, but due to glitchy input of the eye and incorrect position input of the display makes it hard to enjoy the changing perspective.
 
+## Introduction
+
+A few months ago, we got an opportunity to play some VR games using VR hardware, called Valve Index. We focused on two VR games, Moss and Half Life - Alyx. Moss, which requires player to use fixed third person view, impressed us, giving novel, marvelous, but easygoing feeling. However, Half Life - Alyx, which requires player's character to move around in the world holding FPV (First Person View), gave us motion sickness when we were playing it, especially moving around in the game. The motion sickness was so serious that we wanted to know why the terrible dizziness arises and we aimed to solve this problem by making simple program.
+
 ## Theoretical Backgrounds
 ![alt text](./projection_matrix.png)
 Rendering a 3D scene to a 2D display needs 3 matrix multiplications. 
