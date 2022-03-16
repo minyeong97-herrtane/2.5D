@@ -39,7 +39,7 @@ And we are going to match the point of the frustum to the position of the eye.
 This way, moving your eyes will change the values of left, right, bottom, top.
 
 ## Project Setup
-### Unity Porject Setup
+### Unity Pject Setup
 The project is set with Unity game engine, tracking eye movement using Valve Index VR.
 Any 3D environment is good to test this project. We used a simple project presented [here](https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-for-unity-2018-4-32351). The key change to the project is to adjust the projection matrix. The original project has a function called `PerspectiveOffCenter()`. This function takes parameters like left, right, bottom, top, near, far and calculates the projection matrix explained above.
 
