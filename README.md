@@ -112,3 +112,4 @@ By doing this, we can update the perspective matrix according to the position of
 ## The Result
 It is difficult for the player to experience 3-dimensional depth due to 1) lack of precise location tracking of the display & eye 2) same image input to both of your eyes. But because we could not solve the first problem, it is hard to measure the effect.
 
+![result](./result1.png)
