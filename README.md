@@ -112,9 +112,7 @@ By doing this, we can update the perspective matrix according to the position of
 ## The Result
 It is difficult for the player to experience 3-dimensional depth due to 1) lack of precise location tracking of the display & eye 2) same image input to both of your eyes. But because we could not solve the first problem, it is hard to measure the effect.
 
-![result](./result1.png)
-![result](./result2.png)
-![result](./result3.png)
 As you can see from the pictures, the rendering of the scene is changed without moving any mouse or keyboard. The perspective is changed by only moving your head. The position of the head comes from the controller.
 The gif below explains how this works. When your head position moves to the right, the perspective will show more of the left. Vice versa, the perspective will show more of the right if you move your head to the right.
+
 ![result](./result.gif)
