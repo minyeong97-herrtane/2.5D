@@ -122,3 +122,5 @@ The gif below explains how this works. When your head position moves to the righ
 ![result](./result.gif)
 
 The key part of this project is to give the player a feeling of immersion of 3-dimensional space without giving any nausea.
+
+When we experience our program firsthand, we could control the perspective without any motion sickness. In addition, we could feel as if we look on outside through virtual 'window', monitor. But we felt something lacking, unlike using VR machine, especially about sense of space. 
