@@ -116,3 +116,5 @@ As you can see from the pictures, the rendering of the scene is changed without 
 The gif below explains how this works. When your head position moves to the right, the perspective will show more of the left. Vice versa, the perspective will show more of the right if you move your head to the right.
 
 ![result](./result.gif)
+
+The key part of this project is to give the player a feeling of immersion of 3-dimensional space without giving any nausea.
